@@ -58,13 +58,13 @@ const app = new Vue(
                 }
             },
             showThumbBigger: function() {
-                this.activeSlide = 1;
+                // this.activeSlide = 1;
             },
             sliderAutoPlay: function() {
 
                 this.clockCounter = setInterval(() => {
                     this.goToNextSlider();
-                }, 1000);
+                }, 3000);
             },
             stopSliderAutoPlay: function() {
                 clearInterval(this.clockCounter);

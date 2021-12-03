@@ -13,7 +13,7 @@ const app = new Vue(
         el: '#root',
         data: {
             activeSlide: 0,
-            clockCounter: false,
+            clockCounter: null,
             slides: [
                 {
                     image: 'img/01.jpg',
@@ -63,7 +63,7 @@ const app = new Vue(
             sliderAutoPlay: function() {
 
                 this.clockCounter = setInterval(() => {
-                    this.goToNextSlider;
+                    this.goToNextSlider();
                 }, 1000);
             },
             stopSliderAutoPlay: function() {

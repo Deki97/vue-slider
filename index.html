@@ -15,7 +15,7 @@
     <div id="root">
         <div class="app-container">
             <!-- Slider -->
-            <div class="slider">
+            <div @mouseenter="stopSliderAutoPlay" @mouseleave="sliderAutoPlay" class="slider">
                 <!-- Big Image container -->
                 <div class="big-images-container">
                     <!-- Single image container -->
@@ -44,7 +44,7 @@
                     <!-- End Arrow down -->
     
                     <div v-for="element, index in slides" class="single-thumb" :class="{ 'active' : index === activeSlide}">
-                        <img :src="element.image" :alt="element.title">
+                        <img @click="showThumbBigger" :src="element.image" :alt="element.title">
                     </div>
                 </div>
     

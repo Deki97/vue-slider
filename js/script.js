@@ -1,5 +1,5 @@
 // Descrizione:
-// Partendo dal markup della versione svolta in js plain, rifare lo slider ma questa volta usando Vue.
+// [x] Partendo dal markup della versione svolta in js plain, rifare lo slider ma questa volta usando Vue.
 
 // Bonus:
 // 1- al click su una thumb, visualizzare in grande l'immagine corrispondente
@@ -13,6 +13,7 @@ const app = new Vue(
         el: '#root',
         data: {
             activeSlide: 0,
+            clockCounter: false,
             slides: [
                 {
                     image: 'img/01.jpg',
@@ -55,6 +56,21 @@ const app = new Vue(
                 } else {
                     this.activeSlide = this.slides.length - 1;
                 }
+            },
+            showThumbBigger: function() {
+                this.activeSlide = 1;
+            },
+            sliderAutoPlay: function() {
+
+                this.clockCounter = setInterval(() => {
+                    this.goToNextSlider;
+                }, 1000);
+            },
+            stopSliderAutoPlay: function() {
+                clearInterval(this.clockCounter);
+            },
+            created: function() {
+                this.sliderAutoPlay();
             }
         }
     }
